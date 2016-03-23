@@ -21,8 +21,8 @@ if(Meteor.isServer){
 		//Use Session variable 'hashtagIdVar' for the 'tag' value in instagram
 		searchInstagram: function (hashtagIdVar) {
 			console.log('checking instagram...');
-
-			HTTP.call( 'GET', 'https://api.instagram.com/v1/tags/'+hashtagIdVar+'/media/recent?access_token=1634185146.1677ed0.d05110c153ab4f86b27f2e99d58a3f3c', {
+			//SEE https://www.instagram.com/developer/authentication/ TO OBTAIN ACCESS TOKEN
+			HTTP.call( 'GET', 'https://api.instagram.com/v1/tags/'+hashtagIdVar+'/media/recent?access_token=YOUR-ACCESS-TOKEN', {
 				params: {
 					  	
 				  'count': 2, //return two instagram posts
