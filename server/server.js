@@ -6,7 +6,7 @@ if(Meteor.isServer){
 		console.log("startup server function");
 
 	});
-//PUBLICATIONS 
+//PUBLICATIONS --don't forget to remove 'autopublish' package
 	Meteor.publish('instafeed', function publishFunction(){
 		//wait 2s before loading data
 		Meteor._sleepForMs(2000);
