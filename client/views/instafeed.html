@@ -3,19 +3,26 @@
 <!--display current hashtagId -->
 <h3># {{ headline }}</h3>
 
-	<div class = "instagramPhoto" id = 'instafeed'>
+	<div class = "instagramPhoto six columns" id = 'instafeed'>
 
 	<!--CALL loadPicture function from app.js-->
 		{{#each loadPictures}}
 		
-		<!-- LOAD ALL DATA FROM SUBSCRIPTION  -->
-		{{#each data }}
+		<!-- delete button must be placed in this loadPicture loop, otherwise delete will NOT hook into this._id 
+		for removal from Collection -->
 
+		<button class="delete-image" id="delete" type="submit">Delete</button>
+
+		<!-- <p>{{_id}}</p> -->
+				
+				<!-- LOAD ALL DATA FROM SUBSCRIPTION  -->
+		{{#each data }}
+			
 			<!-- LOAD IMAGES "data.images.low_resolution.url" -->
 			{{#with images}}
 				{{#with low_resolution}}
-
-				<img src="{{ url }}">
+				
+					<img src="{{ url }}">
 
 				{{/with}}
 			{{/with}}
@@ -26,8 +33,9 @@
 				<p>{{ text }}</p>
 
 			{{/with}}
-
+		
 		{{/each}}   <!--DATA LOOP END-->
+
 	{{/each}}  <!--loadPicture function loop END-->
 	</div>
 

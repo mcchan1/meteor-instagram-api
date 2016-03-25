@@ -38,6 +38,18 @@ Template.hashtag.events({
 		}	
 	}); //end of helpers
 
+	Template.instafeed.events({
+
+		'click .delete-image': function (event) {
+			
+			event.preventDefault();
+			//delete button hooks into this._id assigned to this div
+			var removeId = this._id;
+			//call method, and send removeId as arg
+			Meteor.call('deletePhoto', removeId); 	
+		}
+	}); // end instafeed events
+
 //SUBSCRIPTIONS --subscribe to instafeed publication from server
 	Meteor.subscribe('instafeed', function() {
 		//count number of photographs in Publication 'instafeed'

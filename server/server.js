@@ -40,5 +40,10 @@ if(Meteor.isServer){
 			  } //else 
 			}); //http call 
 		}, //searchInstagram()
+
+		deletePhoto: function(removeId) {
+			//removeId is arg from server side
+			Photographs.remove(removeId);
+		} //deletePhoto()
 	}); //methods
 } //ifServer
